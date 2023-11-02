@@ -17,7 +17,6 @@ with st.sidebar:
 
 def main():
     load_dotenv()
-    openai.api_key ='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'
     st.header("AdventureWorks querying to a database🗃️ in Natural Language")                                                            
     DRIVER_NAME='ODBC Driver 17 for SQL Server'                                                                                 # Details of the SQL Server with its Database
     SERVER_NAME='Bharti-PC'

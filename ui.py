@@ -28,6 +28,7 @@ with st.sidebar:
 
 
 def main():
+    load_dotenv()
     @st.cache_resource 
     def init_connection():
         return pyodbc.connect(
@@ -35,7 +36,7 @@ def main():
         + st.secrets["SERVER_NAME"]
         + ";DATABASE="
         + st.secrets["DATABASE_NAME"]
-    load_dotenv()
+    
     openai.api_key =key
     st.header("AdventureWorks querying to a database🗃️ in Natural Language")
     @st.cache_resource

@@ -4,6 +4,17 @@ import pandas as pd
 from dotenv import load_dotenv
 import openai
 
+
+@st.cache_resource
+def init_connection():
+    return pyodbc.connect(
+        "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
+        + st.secrets["SERVER_NAME"]
+        + ";DATABASE="
+        + st.secrets["DATABASE_NAME"]
+
+
+
 with st.sidebar:
     st.header("Interact with Database")
     key=st.text_input("Enter your API key")
@@ -20,17 +31,19 @@ def main():
     load_dotenv()
     openai.api_key =key
     st.header("AdventureWorks querying to a database🗃️ in Natural Language")                                                            
-    DRIVER_NAME='ODBC Driver 17 for SQL Server'                                                                                 # Details of the SQL Server with its Database
-    SERVER_NAME='Bharti-PC'
-    DATABASE_NAME='AdventureWorks2022'
+    # DRIVER_NAME='ODBC Driver 17 for SQL Server'                                                                                 # Details of the SQL Server with its Database
+    # SERVER_NAME='Bharti-PC'
+    # DATABASE_NAME='AdventureWorks2022'
+   
 
-    connection_string=f'''
-        DRIVER={{{DRIVER_NAME}}};
-        SERVER={SERVER_NAME};
-        DATABASE={DATABASE_NAME};
-        trusted_connection=yes'''
 
-    cnxn = odbc.connect(connection_string)                                                                                      # Establishing the connection with the SQL Server
+    # connection_string=f'''
+    #     DRIVER={{{DRIVER_NAME}}};
+    #     SERVER={SERVER_NAME};
+    #     DATABASE={DATABASE_NAME};
+    #     trusted_connection=yes'''
+
+    # cnxn = odbc.connect(connection_string)                                                                                      # Establishing the connection with the SQL Server
     cursor=cnxn.cursor()
     cursor1=cnxn.cursor()
     cursor2=cnxn.cursor()

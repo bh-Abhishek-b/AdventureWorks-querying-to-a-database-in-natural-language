@@ -6,6 +6,7 @@ import openai
 
 with st.sidebar:
     st.header("Interact with Database")
+    key=st.text_input("Enter your API key")
     st.markdown("""
     ## About 
     Works with the help of OpenAI""")
@@ -17,6 +18,7 @@ with st.sidebar:
 
 def main():
     load_dotenv()
+    openai.api_key =key
     st.header("AdventureWorks querying to a database🗃️ in Natural Language")                                                            
     DRIVER_NAME='ODBC Driver 17 for SQL Server'                                                                                 # Details of the SQL Server with its Database
     SERVER_NAME='Bharti-PC'

@@ -33,7 +33,7 @@ def init_connection():
         + st.secrets["DATABASE_NAME"])
 
 
-
+@st.cache_data(ttl=600)
 def main():
     load_dotenv()
     
@@ -53,7 +53,7 @@ def main():
     #     SERVER={SERVER_NAME};
     #     DATABASE={DATABASE_NAME};
     #     trusted_connection=yes'''
-    @st.cache_data(ttl=600)
+    
     # cnxn = odbc.connect(connection_string)                                                                                      # Establishing the connection with the SQL Server
     cursor=cnxn.cursor()
     cursor1=cnxn.cursor()

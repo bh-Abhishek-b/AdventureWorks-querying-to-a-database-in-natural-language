@@ -40,12 +40,12 @@ def main():
     
     openai.api_key =key
     st.header("AdventureWorks querying to a database🗃️ in Natural Language")
-    @st.cache_resource
+    
    
     # DRIVER_NAME='ODBC Driver 17 for SQL Server'                                                                                 # Details of the SQL Server with its Database
     # SERVER_NAME='Bharti-PC'
     # DATABASE_NAME='AdventureWorks2022'
-   cnxn=init_connection()
+    cnxn=init_connection()
     
 
     # connection_string=f'''

@@ -31,7 +31,10 @@ def init_connection():
         "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
         + st.secrets["SERVER_NAME"]
         + ";DATABASE="
-        + st.secrets["DATABASE_NAME"])
+        + st.secrets["DATABASE_NAME"]+ ";UID="
+        + st.secrets["username"]
+        + ";PWD="
+        + st.secrets["password"])
 
 
 def main():

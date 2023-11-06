@@ -24,13 +24,13 @@ with st.sidebar:
     st.write("For Reference")
     st.write('''-[Streamlit](https://streamlit.io/) 
             -  [OpenAI](https://platform.openai.com/docs/models)''')
-    @st.cache_resource 
-    def init_connection():
+@st.cache_resource 
+ def init_connection():
         return pyodbc.connect(
         "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
         + st.secrets["SERVER_NAME"]
         + ";DATABASE="
-        + st.secrets["DATABASE_NAME"]
+        + st.secrets["DATABASE_NAME"])
 
 
 

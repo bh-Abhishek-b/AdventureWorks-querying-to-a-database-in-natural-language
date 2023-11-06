@@ -33,9 +33,9 @@ def init_connection():
         + ";DATABASE="
         + st.secrets["DATABASE_NAME"]
         + ";UID="
-        + st.secrets["username"]
+        + st.secrets["USER_NAME"]
         + ";PWD="
-        + st.secrets["password"])
+        + st.secrets["PASSWD"])
 
 
 def main():

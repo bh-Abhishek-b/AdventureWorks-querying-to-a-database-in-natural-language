@@ -33,7 +33,7 @@ def init_connection():
         + ";DATABASE="
         + st.secrets["DATABASE_NAME"]
         + ";UID="
-        + st.secrets["USER_NAME"]
+        + st.secrets["UID"]
         + ";PWD="
         + st.secrets["PASSWD"])
 

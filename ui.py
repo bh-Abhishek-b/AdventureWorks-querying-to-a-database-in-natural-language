@@ -25,7 +25,6 @@ with st.sidebar:
     st.write('''-[Streamlit](https://streamlit.io/) 
             -  [OpenAI](https://platform.openai.com/docs/models)''')
 @st.cache_resource
-@st.cache_data(ttl=600)
 def init_connection():
         return odbc.connect(
         "DRIVER={ODBC Driver 17 for SQL Server};SERVER="

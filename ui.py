@@ -26,7 +26,7 @@ with st.sidebar:
             -  [OpenAI](https://platform.openai.com/docs/models)''')
 @st.cache_resource 
 def init_connection():
-        return pyodbc.connect(
+        return odbc.connect(
         "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
         + st.secrets["SERVER_NAME"]
         + ";DATABASE="

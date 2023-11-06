@@ -24,11 +24,6 @@ with st.sidebar:
     st.write("For Reference")
     st.write('''-[Streamlit](https://streamlit.io/) 
             -  [OpenAI](https://platform.openai.com/docs/models)''')
-
-
-
-def main():
-    load_dotenv()
     @st.cache_resource 
     def init_connection():
         return pyodbc.connect(
@@ -36,6 +31,12 @@ def main():
         + st.secrets["SERVER_NAME"]
         + ";DATABASE="
         + st.secrets["DATABASE_NAME"]
+
+
+
+def main():
+    load_dotenv()
+    
     
     openai.api_key =key
     st.header("AdventureWorks querying to a database🗃️ in Natural Language")

@@ -24,7 +24,8 @@ with st.sidebar:
     st.write("For Reference")
     st.write('''-[Streamlit](https://streamlit.io/) 
             -  [OpenAI](https://platform.openai.com/docs/models)''')
-@st.cache_resource 
+@st.cache_resource
+@st.cache_data(ttl=600)
 def init_connection():
         return odbc.connect(
         "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
@@ -33,7 +34,6 @@ def init_connection():
         + st.secrets["DATABASE_NAME"])
 
 
-@st.cache_data(ttl=600)
 def main():
     load_dotenv()
     

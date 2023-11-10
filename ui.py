@@ -12,6 +12,17 @@ import openai
 #         + st.secrets["SERVER_NAME"]
 #         + ";DATABASE="
 #         + st.secrets["DATABASE_NAME"]
+def init_connection():
+        return odbc.connect(
+        "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
+        + st.secrets["SERVER_NAME"]
+        + ";DATABASE="
+        + st.secrets["DATABASE_NAME"]
+        + ";UID="
+        + st.secrets["UID"]
+        + ";PWD="
+        + st.secrets["PASSWD"])
+
 
 
 
@@ -25,17 +36,6 @@ with st.sidebar:
     st.write('''-[Streamlit](https://streamlit.io/) 
             -  [OpenAI](https://platform.openai.com/docs/models)''')
 @st.cache_resource
-def init_connection():
-        return odbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
-        + st.secrets["SERVER_NAME"]
-        + ";DATABASE="
-        + st.secrets["DATABASE_NAME"]
-        + ";UID="
-        + st.secrets["UID"]
-        + ";PWD="
-        + st.secrets["PASSWD"])
-
 
 def main():
     load_dotenv()
